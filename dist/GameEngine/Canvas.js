@@ -3,9 +3,14 @@ export class Canvas {
         this.width = 1500;
         this.height = 600;
     }
-    init(el) {
+    init(el, params) {
         el.height = this.height;
         el.width = this.width;
-        this.ctx = el.getContext("2d");
+        if (params['renderType'] == 'canvas') {
+            this.ctx = el.getContext("2d");
+        }
+        else if (params['renderType'] == 'webgl') {
+            this.ctx = el.getContext("webgl");
+        }
     }
 }

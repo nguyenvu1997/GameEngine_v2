@@ -4,9 +4,9 @@ import { Scene } from "./Scene.js";
 import { TextObject } from "./TextObject.js";
 
 export class CanvasRenderer {
-    ctx: CanvasRenderingContext2D;
+    ctx: CanvasRenderingContext2D | WebGLRenderingContext;
 
-    constructor(ctx: CanvasRenderingContext2D) {
+    constructor(ctx: CanvasRenderingContext2D | WebGLRenderingContext) {
         this.ctx = ctx;
     }
 
