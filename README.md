@@ -1,10 +1,7 @@
-# trex.github.io
+# Game Engine V2
 T-Rex Runner
 
 # Run game
 ```bash
 npx serve
 ``` 
-
-# Demo
-https://t-rex-runner-135.herokuapp.com/
