@@ -1,6 +1,6 @@
 export class WebGLRenderer {
-    constructor(ctx) {
-        this.ctx = ctx;
+    constructor(params) {
+        this.ctx = params.ctx;
         console.log('WebGLRenderer');
     }
     render(scene) {
