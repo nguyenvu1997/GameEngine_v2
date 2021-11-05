@@ -5,14 +5,14 @@ import { ImageObject } from "./ImageObject.js";
 import { Scene } from "./Scene.js";
 import { TextObject } from "./TextObject.js";
 
-export class CanvasRenderer {
+export class CanvasRenderer implements IRenderer {
     ctx;
 
     constructor(params: ICanvasContext) {
         this.ctx = params.ctx;
     }
 
-    render(scene: Scene) {
+    render(scene: Scene): void {
         scene.objectList.forEach(obj => {
             if (obj instanceof ImageObject) {
                 renderImage(obj, this.ctx)

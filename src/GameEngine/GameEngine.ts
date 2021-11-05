@@ -3,9 +3,9 @@ import { Scene } from "./Scene.js";
 import { SceneManager } from "./SceneManager.js";
 import { IRenderer } from "../Interfaces/IRenderer.js";
 
-export class GameEngine implements IRenderer {
+export class GameEngine {
     canvas: Canvas;
-    renderer;
+    renderer: IRenderer;
     sceneManager: SceneManager;
 
     constructor(config?) {

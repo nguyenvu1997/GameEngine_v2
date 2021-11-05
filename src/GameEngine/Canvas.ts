@@ -4,11 +4,11 @@ import { IRenderer } from "../Interfaces/IRenderer.js";
 import { CanvasRenderer } from "./CanvasRenderer.js";
 import { WebGLRenderer } from "./WebGLRenderer.js";
 
-export class Canvas implements ICanvasInit, ICanvasContext, IRenderer {
+export class Canvas implements ICanvasInit {
     width: number = 1500;
     height: number = 600;
-    ctx: CanvasRenderingContext2D | WebGLRenderingContext;
-    renderer: CanvasRenderer | WebGLRenderer;
+    ctx;
+    renderer: IRenderer;
 
     init(el: HTMLCanvasElement, params?) {
         el.height = this.height;
@@ -29,3 +29,4 @@ export class Canvas implements ICanvasInit, ICanvasContext, IRenderer {
         }
     }
 }
+
