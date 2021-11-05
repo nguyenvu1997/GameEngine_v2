@@ -4,25 +4,29 @@ import { IRenderer } from "../Interfaces/IRenderer.js";
 import { CanvasRenderer } from "./CanvasRenderer.js";
 import { WebGLRenderer } from "./WebGLRenderer.js";
 
-export class Canvas implements ICanvasInit, ICanvasContext {
+export class Canvas implements ICanvasInit {
     width: number = 1500;
     height: number = 600;
-    ctx;
     renderer: IRenderer;
+    canvasContext: ICanvasContext;
 
     init(el: HTMLCanvasElement, params?) {
         el.height = this.height;
         el.width = this.width;
 
         if (params['renderType'] == 'canvas') {
-            this.ctx = el.getContext("2d");
+            this.canvasContext = {
+                ctx: el.getContext("2d")
+            }
             this.renderer = new CanvasRenderer({
-                ctx: this.ctx
+                ctx: this.canvasContext.ctx
             });
         } else if (params['renderType'] == 'webgl') {
-            this.ctx = el.getContext("webgl");
+            this.canvasContext = {
+                ctx: el.getContext("webgl")
+            }
             this.renderer = new WebGLRenderer({
-                ctx: this.ctx
+                ctx: this.canvasContext.ctx
             });
         } else {
             throw ('Not exist render type:' + params['renderType'])
