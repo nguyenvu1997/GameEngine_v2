@@ -4,7 +4,7 @@ import { IRenderer } from "../Interfaces/IRenderer.js";
 import { CanvasRenderer } from "./CanvasRenderer.js";
 import { WebGLRenderer } from "./WebGLRenderer.js";
 
-export class Canvas implements ICanvasInit {
+export class Canvas implements ICanvasInit, ICanvasContext {
     width: number = 1500;
     height: number = 600;
     ctx;
